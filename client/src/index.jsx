@@ -1,22 +1,21 @@
-import react from ('react');
-import reactDOM from ('react-dom');
-import axios from ('axios');
+// import React from ('react');
+// import ReactDOM from ('react-dom');
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props)
 
-    this.state = {
+//     this.state = {
 
-    }
-  }
+//     }
+//   }
 
-  render() {
-    return (
-    )
-  }
-}
+//   render() {
+//     return (
+//     )
+//   }
+// }
 
 
-ReactDOM.render(<App />, document.getElementById('details'));
+// ReactDOM.render(<App />, document.getElementById('details'));

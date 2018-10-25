@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const PORT = ?;
+const PORT = 3495;
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
