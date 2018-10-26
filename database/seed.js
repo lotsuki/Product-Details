@@ -2,7 +2,6 @@
 //const Product = require('./Product.js');
 const faker = require('faker');
 
-
 var makeMockData = () => {
   var products = [];
   for (var i = 1; i < 20; i++) {
@@ -24,10 +23,13 @@ var makeMockReviews = () => {
 
    for (var i = 1; i < randomNumber; i++) {
      reviews.push({
-        title: faker.lorem.sentence(),
-        review: faker.lorem.sentences(),
-        rating: faker.random.number({min: 1, max: 5}),
-        recommend: faker.random.boolean()
+       review_id: faker.random.number({ max: 5, min: 1 }),
+       reviewer: faker.internet.userName(),
+       title: faker.lorem.sentence(),
+       body: faker.lorem.paragraph(5),
+       recomend: faker.random.boolean(),
+       helpful: faker.random.number(47),
+       unhelpful: faker.random.number(22)
      });
    }
    return reviews;
@@ -36,12 +38,12 @@ var makeMockReviews = () => {
 //console.log(makeMockReviews())
 //console.log(makeMockData())
 
-const insertSampleProducts = () => {
-  Product.create(makeMockData())
-  .then(() => db.disconnect())
-};
+// const insertSampleProducts = () => {
+//   Product.create(makeMockData())
+//   .then(() => db.disconnect())
+// };
 
-insertSampleProducts();
+// insertSampleProducts();
 
 
 
