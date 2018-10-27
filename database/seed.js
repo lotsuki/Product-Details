@@ -1,14 +1,13 @@
-//const db = require('./index.js');
-//const Product = require('./Product.js');
+const Product = require('./Product.js');
 const faker = require('faker');
 
-var makeMockData = () => {
+var createMockProducts = () => {
   var products = [];
-  for (var i = 1; i < 20; i++) {
+  for (var i = 1; i <= 100; i++) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
-      reviews: makeMockReviews(),
+      reviews: createMockReviews(),
       itemNum: i,
       price: faker.commerce.price(50, 500),
       color: faker.commerce.color()
@@ -17,7 +16,7 @@ var makeMockData = () => {
   return products;
 };
 
-var makeMockReviews = () => {
+var createMockReviews = () => {
   var reviews = [];
   var randomNumber = faker.random.number({min: 3, max: 16});
 
@@ -35,15 +34,14 @@ var makeMockReviews = () => {
    return reviews;
 };
 
-//console.log(makeMockReviews())
-//console.log(makeMockData())
 
-// const insertSampleProducts = () => {
-//   Product.create(makeMockData())
-//   .then(() => db.disconnect())
-// };
 
-// insertSampleProducts();
+var data = createMockProducts();
+
+Product.create(data)
+//.then(() => db.disconnect());  //WHY DISCONNECT??
+
+
 
 
 
