@@ -5,15 +5,8 @@ mongoose.Promise = global.Promise;
 const productSchema = mongoose.Schema({
   _id: Number,
   name: String,
-  reviews: [{
-    review_id: Number,
-    reviewer: String,
-    title: String,
-    body: String,
-    recomend: Boolean,
-    helpful: Number,
-    unhelpful: Number
-  }],
+  rating: Number,
+  reviewCount: Number,
   itemNum: Number,
   price: Number,
   color: String
