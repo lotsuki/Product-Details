@@ -7,7 +7,23 @@
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
     "db:setup": "node database/seed.js",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "stage": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md,scss,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
