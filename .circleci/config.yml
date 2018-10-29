@@ -5,5 +5,4 @@ jobs:
       - image: circleci/node: 8.11.4-browsers
     steps:
       - checkout
-      - run: sudo npm install
-      - run: sudo npm test
+      - run: echo "a first hello"
