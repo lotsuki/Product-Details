@@ -5,5 +5,5 @@ jobs:
       - image: circleci/node: 8.11.4-browsers
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - run: sudo npm install
+      - run: sudo npm test
