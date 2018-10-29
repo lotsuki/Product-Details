@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js",
+    "start": "webpack-dev-server --mode development --config webpack.dev.js --open --hot --history-api-fallback",
+    "build": "webpack --mode production --config webpack.prod.js --open --hot --history-api-fallback",
     "db:setup": "node database/seed.js",
     "test": "jest --watch",
     "stage": "lint-staged"
@@ -62,16 +62,20 @@
     "prettier": "^1.14.3",
     "react-test-render": "^1.1.1",
     "regenerator-runtime": "^0.12.1",
-    "webpack": "^4.23.0",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
     "mongoose": "^5.3.6",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.23.1",
+    "webpack-merge": "^4.1.4"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/spec/setupTests.js"
