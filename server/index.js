@@ -7,7 +7,7 @@ const Product = require('../database/Product.js');
 
 const app = express();
 
-const PORT = 3495;
+const PORT = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
