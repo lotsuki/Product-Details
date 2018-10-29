@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/spec
     docker:
-      - image: circleci/node: 8.11.4
+      - image: circleci/node:8.11.4
     steps:
       - checkout
       - run: npm test
