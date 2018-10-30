@@ -16,7 +16,8 @@ module.exports = {
     "import/no-named-as-default": 0,
     "max-len": ["error", 80],
     "prettier/prettier": "error",
-    'no-console': 'off',
+    "no-console": "off",
+    "prefer-destructuring": ["error", {"object": false, "array": false}],
     "react/jsx-filename-extension": [
       "error",
       {

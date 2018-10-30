@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config webpack.dev.js --open --hot --history-api-fallback",
-    "build": "webpack --mode production --config webpack.prod.js --open --hot --history-api-fallback",
+    "start": "nodemon server/index.js",
+    "build-dev": "webpack --config webpack.dev.js --watch --open",
+    "build-prod": "webpack --config webpack.prod.js --open",
     "db:setup": "node database/seed.js",
     "test": "jest --watch --runInBand",
-    "stage": "lint-staged"
+    "stage": "lint-staged --fix"
   },
   "husky": {
     "hooks": {
@@ -80,6 +81,9 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/spec/setupTests.js"
+  },
+  "jest-junit": {
+    "output": "./test-report.xml"
   },
   "engines": {
     "node": ">= 4"

@@ -1,4 +1,4 @@
 module.exports = {
   setupFiles: ["<rootDir>/spec/setUpTests.js"],
-  reporters: ["default", "jest-junit"]
+  testResultsProcessor: process.env.CI ? "jest-junit" : null
 };

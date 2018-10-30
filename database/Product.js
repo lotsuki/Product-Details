@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const db = require('./index.js');
+const mongoose = require("mongoose");
+
 mongoose.Promise = global.Promise;
 
 const productSchema = mongoose.Schema({
@@ -12,7 +12,6 @@ const productSchema = mongoose.Schema({
   color: String
 });
 
+const Products = mongoose.model("Products", productSchema);
 
-const Product = mongoose.model('Product', productSchema);
-
-module.exports = Product;
+module.exports = Products;
