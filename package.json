@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --mode development --config webpack.dev.js --open --hot --history-api-fallback",
     "build": "webpack --mode production --config webpack.prod.js --open --hot --history-api-fallback",
     "db:setup": "node database/seed.js",
-    "test": "jest --watch",
+    "test": "jest --watch --runInBand",
     "stage": "lint-staged"
   },
   "husky": {
@@ -57,6 +57,7 @@
     "husky": "^1.1.2",
     "install": "^0.12.2",
     "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
     "lint-staged": "^8.0.0",
     "npm": "^6.4.1",
     "prettier": "^1.14.3",
