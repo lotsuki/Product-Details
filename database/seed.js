@@ -1,15 +1,15 @@
-const Product = require('./Product.js');
-const faker = require('faker');
-const db = require('./index.js');
+const faker = require("faker");
+const Product = require("./Product.js");
+window.db = require("./index.js"); /* exported variableName */
 
-var createMockProducts = () => {
-  var products = [];
-  for (var i = 1; i <= 5; i++) {
+const createMockProducts = () => {
+  const products = [];
+  for (let i = 1; i <= 150; i += 1) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
       rating: Number(faker.finance.amount(1, 5, 1)),
-      reviewCount: faker.random.number({min: 20, max: 150}),
+      reviewCount: faker.random.number({ min: 20, max: 150 }),
       itemNum: i,
       price: faker.commerce.price(50, 500),
       color: faker.commerce.color()
@@ -36,12 +36,10 @@ var createMockProducts = () => {
 //    return reviews;
 // };
 
-
-
-var data = createMockProducts();
+const data = createMockProducts();
 
 function inputSampleProducts() {
-  //Product.drop()
+  // Product.drop()
   Product.create(data);
   // .then(result => {
   //   Product.create(data)
@@ -51,11 +49,5 @@ function inputSampleProducts() {
   // })
 }
 
-
 inputSampleProducts();
-//.then(() => db.disconnect());  ??
-
-
-
-
-
+// .then(() => db.disconnect());  ??

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+window.db = require("./index.js"); /* exported variableName */
 
 mongoose.Promise = global.Promise;
 

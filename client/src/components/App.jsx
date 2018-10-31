@@ -6,7 +6,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      test: []
+      products: []
     };
   }
 
@@ -16,7 +16,7 @@ class App extends React.Component {
       .then(res => {
         const data = res.data;
         this.setState({
-          test: data
+          products: data
         });
       })
       .catch(err => {
@@ -25,11 +25,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { test } = this.state;
+    const { products } = this.state;
     return (
       <div className="product">
         <ul>
-          {test.map(product => (
+          {products.map(product => (
             <li key={product.id}>
               <div>{product.name}</div>
               <div>{product.rating}</div>
@@ -46,6 +46,8 @@ class App extends React.Component {
 }
 
 export default App;
+
+// TODO: fix eslint to include underscore vars
 
 // {<div className="greeting">Hi...{this.state.test}</div>
 //       <button onClick={() => { this.changeState() }}>Press Me</button>}

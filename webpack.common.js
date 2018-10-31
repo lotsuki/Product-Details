@@ -31,10 +31,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["jsx", "js"]
-  },
-  eslint: {
-    configFile: "./.eslintrc.js"
+    extensions: [".jsx", ".js"]
   }
 };
 
