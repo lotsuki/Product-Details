@@ -1,6 +1,6 @@
 const faker = require("faker");
 const Product = require("./Product.js");
-window.db = require("./index.js"); /* exported variableName */
+// const db = require("./index.js"); /* exported variableName */
 
 const createMockProducts = () => {
   const products = [];

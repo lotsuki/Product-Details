@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-/* exported variableName */
-window.mongoose = require("mongoose");
+
+// const mongoose = require("mongoose");
 const Products = require("../database/Product.js");
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/../client/dist`));
 
-app.get("/api/posts", res => {
+app.get("/api/posts", (req, res) => {
   // TODO: fix eslint to include req
   Products.find()
     .limit(1)
