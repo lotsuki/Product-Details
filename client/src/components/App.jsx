@@ -1,29 +1,36 @@
-import React from 'react';
+import React from "react";
+import axios from "axios";
+import ProductDetails from "./ProductDetails.jsx";
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      test: "my name is Lindsey"
-    }
-    this.changeState = this.changeState.bind(this)
+      products: []
+    };
   }
 
-  changeState() {
-    this.setState({
-      test: "just kidding"
-    })
+  componentDidMount() {
+    axios
+      .get("http://localhost:3001/api/posts")
+      .then(res => {
+        const data = res.data;
+        this.setState({
+          products: data
+        });
+      })
+      .catch(err => {
+        console.log("Error at GET request", err);
+      });
   }
 
   render() {
-    return (
-      <div>
-      <div className="greeting">Hi...{this.state.test}</div>
-      <button onClick={() => { this.changeState() }}>Press Me</button>
-      </div>
-    )
+    const { products } = this.state;
+    return <ProductDetails products={products} />;
   }
 }
 
 export default App;
+
+// TODO: fix eslint to include underscore vars

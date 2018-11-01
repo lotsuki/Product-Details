@@ -1,25 +1,18 @@
-const mongoose = require('mongoose');
-const db = require('./index.js');
+const mongoose = require("mongoose");
+// const db = require("./index.js"); // TODO: fix eslint to ignore import
+
 mongoose.Promise = global.Promise;
 
 const productSchema = mongoose.Schema({
   _id: Number,
   name: String,
-  reviews: [{
-    review_id: Number,
-    reviewer: String,
-    title: String,
-    body: String,
-    recomend: Boolean,
-    helpful: Number,
-    unhelpful: Number
-  }],
+  rating: Number,
+  reviewCount: Number,
   itemNum: Number,
   price: Number,
   color: String
 });
 
+const Products = mongoose.model("Products", productSchema);
 
-const Product = mongoose.model('Product', productSchema);
-
-module.exports = Product;
+module.exports = Products;

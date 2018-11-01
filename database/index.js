@@ -1,14 +1,21 @@
-const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/items';
+const mongoose = require("mongoose");
 
-mongoose.connect(mongoUri, {
-  autoIndex: false,
-  useNewUrlParser: true
-});
+const mongoUri = "mongodb://localhost/items";
 
-const db = mongoose.connection.once('open', () => { console.log('Connected to MongoDB')})
-.on('error', () => { console.log('Cannot connect to MongoDB')});
+mongoose.connect(
+  mongoUri,
+  {
+    autoIndex: false,
+    useNewUrlParser: true
+  }
+);
 
-// db.on('error', console.error.bind(console, 'connection error:'));
+const db = mongoose.connection
+  .once("open", () => {
+    console.log("Connected to MongoDB");
+  })
+  .on("error", () => {
+    console.log("Cannot connect to MongoDB");
+  });
 
 module.exports = db;

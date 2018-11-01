@@ -1,24 +1,26 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount, shallow, render } from 'enzyme';
-import App from '../client/src/components/App.jsx';
+import React from "react";
+import { mount, shallow } from "enzyme";
+import App from "../client/src/components/App";
+import ProductDetails from "../client/src/components/ProductDetails";
 
-
-describe('App component', () => {
-  test('should shallow correctly', () => {
-    expect(shallow(<App />)).toMatchSnapshot()
+describe("App component", () => {
+  it("should render correctly", () => {
+    expect(shallow(<App />)).toMatchSnapshot();
   });
-  test('should mount correctly', () => {
-    expect(mount(<App />)).toMatchSnapshot()
+  it("it should render ProductDetails component", () => {
+    const wrapper = mount(<App />);
+    expect(wrapper.children(ProductDetails).length).toEqual(1);
   });
-  test('should render correctly', () => {
-    expect(render(<App />)).toMatchSnapshot()
-  });
-  test('should output text', () => {
-    const wrapper = shallow(<App />);
-    const text = wrapper.find('.greeting').text();
-    expect(text).toEqual('Hi...my name is Lindsey')
-
+  it("state should contain products property", () => {
+    const wrapper = mount(<App />);
+    const state = wrapper.state().products;
+    expect(state).toHaveLength(0);
   });
 });
 
+// describe("ProductDetails component", () => {
+//   it("should render correctly", () => {
+//     const wrapper = shallow(<ProductDetails />);
+//     expect(wrapper.exists()).toBe(true);
+//   });h
+// })
