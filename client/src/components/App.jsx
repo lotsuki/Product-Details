@@ -7,17 +7,19 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      products: []
+      product: []
     };
   }
 
   componentDidMount() {
+    const url = window.location.href.split("/");
+    const id = url[url.length - 1];
     axios
-      .get("http://localhost:3001/api/posts")
+      .get(`http://localhost:3001/data/${id}`)
       .then(res => {
         const data = res.data;
         this.setState({
-          products: data
+          product: data
         });
       })
       .catch(err => {
@@ -26,8 +28,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { products } = this.state;
-    return <ProductDetails products={products} />;
+    const { product } = this.state;
+    return <ProductDetails product={product} />;
   }
 }
 
