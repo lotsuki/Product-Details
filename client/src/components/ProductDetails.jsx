@@ -12,7 +12,7 @@ const ProductDetails = ({ product }) => (
     <div>{`$${product.price}.00`}</div>
     <div>{product.color}</div>
     <div className="details-image">
-      <img src="" alt="" />
+      <img src="" alt="" img-test="details" />
     </div>
     <div className="quantity">Quantity</div>
     <div className="quantity-button" />

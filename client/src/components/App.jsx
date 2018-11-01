@@ -14,6 +14,7 @@ class App extends React.Component {
   componentDidMount() {
     const url = window.location.href.split("/");
     const id = url[url.length - 1];
+
     axios
       .get(`http://localhost:3001/data/${id}`)
       .then(res => {
