@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-window.db = require("./index.js"); /* exported variableName */
+// const db = require("./index.js"); // TODO: fix eslint to ignore import
 
 mongoose.Promise = global.Promise;
 

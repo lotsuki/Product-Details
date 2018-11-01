@@ -16,8 +16,10 @@ module.exports = {
     "prettier/prettier": "error",
     "no-console": "off",
     "prefer-destructuring": ["error", {"object": false, "array": false}],
+    "import/extensions": [".js", ".jsx"],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     //"no-unused-vars": ["error", {"vars": "local", "args": "all", "varsIgnorePattern": "^_"}],
+    "react/prop-types": 0,
     "react/jsx-filename-extension": [
       "error",
       {

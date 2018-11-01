@@ -1,10 +1,12 @@
 const faker = require("faker");
 const Product = require("./Product.js");
-// const db = require("./index.js"); /* exported variableName */
+const db = require("./index.js");
+
+db.dropCollection("", () => {}); // TODO
 
 const createMockProducts = () => {
   const products = [];
-  for (let i = 1; i <= 150; i += 1) {
+  for (let i = 1; i <= 101; i += 1) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
@@ -17,6 +19,15 @@ const createMockProducts = () => {
   }
   return products;
 };
+
+const data = createMockProducts();
+
+function inputSampleProducts() {
+  return Product.create(data);
+  // .then() TODO
+}
+
+inputSampleProducts();
 
 // var createMockReviews = () => {
 //   var reviews = [];
@@ -35,19 +46,3 @@ const createMockProducts = () => {
 //    }
 //    return reviews;
 // };
-
-const data = createMockProducts();
-
-function inputSampleProducts() {
-  // Product.drop()
-  Product.create(data);
-  // .then(result => {
-  //   Product.create(data)
-  // })
-  // .catch(err => {
-  //   console.log('No data saved')
-  // })
-}
-
-inputSampleProducts();
-// .then(() => db.disconnect());  ??

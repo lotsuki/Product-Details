@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import ProductDetails from "./ProductDetails.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,28 +27,10 @@ class App extends React.Component {
 
   render() {
     const { products } = this.state;
-    return (
-      <div className="product">
-        <ul>
-          {products.map(product => (
-            <li key={product.id}>
-              <div>{product.name}</div>
-              <div>{product.rating}</div>
-              <div>{product.reviewCount}</div>
-              <div>{product.itemNum}</div>
-              <div>{`$${product.price}.00`}</div>
-              <div>{product.color}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+    return <ProductDetails products={products} />;
   }
 }
 
 export default App;
 
 // TODO: fix eslint to include underscore vars
-
-// {<div className="greeting">Hi...{this.state.test}</div>
-//       <button onClick={() => { this.changeState() }}>Press Me</button>}

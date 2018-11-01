@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/../client/dist`));
 
 app.get("/api/posts", (req, res) => {
-  // TODO: fix eslint to include req
   Products.find()
     .limit(1)
     .exec((err, result) => {
