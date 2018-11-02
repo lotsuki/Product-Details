@@ -2,11 +2,11 @@ const faker = require("faker");
 const Product = require("./Product.js");
 const db = require("./index.js");
 
-db.dropCollection("", () => {}); // TODO
+db.dropCollection("products", () => {}); // TODO
 
 const createMockProducts = () => {
   const products = [];
-  for (let i = 1; i <= 101; i += 1) {
+  for (let i = 1; i <= 100; i += 1) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
@@ -28,6 +28,8 @@ function inputSampleProducts() {
 }
 
 inputSampleProducts();
+
+module.exports.createMockProducts = createMockProducts;
 
 // var createMockReviews = () => {
 //   var reviews = [];

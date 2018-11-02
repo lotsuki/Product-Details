@@ -8,7 +8,7 @@
     "build-dev": "webpack --config webpack.dev.js --watch --open",
     "build-prod": "webpack --config webpack.prod.js --open",
     "db:setup": "node database/seed.js",
-    "test": "jest --watch --runInBand",
+    "test": "jest --watch",
     "stage": "lint-staged --fix"
   },
   "husky": {
@@ -59,7 +59,6 @@
     "husky": "^1.1.2",
     "install": "^0.12.2",
     "jest": "^23.6.0",
-    "jest-junit": "^5.2.0",
     "lint-staged": "^8.0.0",
     "npm": "^6.4.1",
     "prettier": "^1.14.3",
@@ -82,10 +81,7 @@
     "webpack-merge": "^4.1.4"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/spec/setupTests.js"
-  },
-  "jest-junit": {
-    "output": "./test-report.xml"
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
   },
   "engines": {
     "node": ">= 4"

@@ -2,8 +2,8 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import App from "../client/src/components/App";
-import ProductDetails from "../client/src/components/ProductDetails";
+import App from "./src/components/App";
+import ProductDetails from "./src/components/ProductDetails";
 
 describe("App component", () => {
   it("should render correctly", () => {
