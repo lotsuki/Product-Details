@@ -1,4 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
+/* eslint no-useless-constructor: "off" */
 
 import NodeEnvironment from "jest-environment-node";
 

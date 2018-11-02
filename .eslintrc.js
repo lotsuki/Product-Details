@@ -6,7 +6,6 @@ module.exports = {
     "browser": true,
     "es6": true,
     "node": true,
-    "jest": true,
     "mongo": true,
     "commonjs": true,
     "prototypejs": true
@@ -17,7 +16,9 @@ module.exports = {
     "no-console": "off",
     "prefer-destructuring": ["error", {"object": false, "array": false}],
     "import/extensions": [".js", ".jsx"],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/database"]}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.js"]}],
+    "no-undef": "off",
+    "no-underscore-dangle": "off",
     //"no-unused-vars": ["error", {"vars": "local", "args": "all", "varsIgnorePattern": "^_"}],
     "react/prop-types": 0,
     "react/jsx-filename-extension": [

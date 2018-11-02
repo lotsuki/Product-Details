@@ -1,5 +1,3 @@
-/* eslint no-underscore-dangle: 0 */
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": false, "peerDependencies": true}] */
 import MongoMemoryServer from "mongodb-memory-server";
 
 const path = require("path");

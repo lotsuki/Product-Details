@@ -1,5 +1,3 @@
-/* eslint no-underscore-dangle: 0 */
-
 import seed from "../seed.js";
 
 const { MongoClient } = require("mongodb");
