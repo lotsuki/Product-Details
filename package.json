@@ -8,23 +8,8 @@
     "build-dev": "webpack --config webpack.dev.js --watch --open",
     "build-prod": "webpack --config webpack.prod.js --open",
     "db:setup": "node database/seed.js",
-    "test": "jest --watch",
+    "test": "jest --watch --env=jsdom",
     "stage": "lint-staged --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{json,md,scss,yaml,yml}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "repository": {
     "type": "git",
@@ -59,10 +44,11 @@
     "husky": "^1.1.2",
     "install": "^0.12.2",
     "jest": "^23.6.0",
+    "jest-environment-node": "^23.4.0",
     "lint-staged": "^8.0.0",
+    "mongodb-memory-server": "^2.6.2",
     "npm": "^6.4.1",
     "prettier": "^1.14.3",
-    "react-test-render": "^1.1.1",
     "regenerator-runtime": "^0.12.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
@@ -72,6 +58,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
+    "mongodb": "^3.1.8",
     "mongoose": "^5.3.6",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

@@ -1,4 +1,5 @@
-const faker = require("faker");
+import faker from "faker";
+
 const Product = require("./Product.js");
 const db = require("./index.js");
 
@@ -23,8 +24,9 @@ const createMockProducts = () => {
 const data = createMockProducts();
 
 function inputSampleProducts() {
-  return Product.create(data);
-  // .then() TODO
+  return Product.create(data)
+    .then(() => db.close())
+    .catch(err => console.log("err", err));
 }
 
 inputSampleProducts();
