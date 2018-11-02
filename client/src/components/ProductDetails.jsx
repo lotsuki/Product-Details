@@ -1,24 +1,27 @@
 import React from "react";
+import ProductInfro from "./ProductInfo.jsx";
+import Quantity from "./Quantity.jsx";
 
 const ProductDetails = ({ product }) => (
   <div className="product">
     <div className="brand">Trailblazer</div>
     <div className="name">{product.name}</div>
-    <div className="rating">
-      {product.rating}
-      <span className="item-num">{product.itemNum}</span>
-    </div>
-    <div>{product.reviewCount}</div>
+    <ProductInfo product={ product } />
     <div>{`$${product.price}.00`}</div>
-    <div>{product.color}</div>
+    <div>Color: {product.color}</div>
     <div className="details-image">
       <img src="" alt="" img-test="details" />
     </div>
-    <div className="quantity">Quantity</div>
-    <div className="quantity-button" />
-    <input type="submit" value="Add to cart" />
-    <input type="submit" value="Add to wish list" />
+    <Quantity />
   </div>
 );
 
+
 export default ProductDetails;
+
+
+
+
+
+
+
