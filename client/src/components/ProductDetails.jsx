@@ -1,33 +1,20 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import ProductInfo from "./ProductInfo.jsx";
+import Quantity from "./Quantity.jsx";
+import styles from "../style.css.js";
 
-const ProductDetails = ({ products }) => (
-  <div className="product">
-    {products.map(product => (
-      <div>
-        <div className="brand">Trailblazer</div>
-        <div className="name">{product.name}</div>
-        <div className="rating">
-          {product.rating}
-          <span className="item-num">{product.itemNum}</span>
-        </div>
-        <div>{product.reviewCount}</div>
-        <div>{`$${product.price}.00`}</div>
-        <div>{product.color}</div>
-        <div className="details-image">
-          <img src="" alt="" />
-        </div>
-        <div className="quantity">Quantity</div>
-        <div className="quantity-button" />
-        <input type="submit" value="Add to cart" />
-        <input type="submit" value="Add to wish list" />
-      </div>
-    ))}
+const ProductDetails = ({ product }) => (
+  <div className="product" style={styles.ProductDetails}>
+    <div style={styles.brand}>Trailblazer</div>
+    <div style={styles.name}>Trailblazer {product.name}</div>
+    <ProductInfo product={product} />
+    <div style={styles.price}>{`$${product.price}.00`}</div>
+    <div style={styles.color}>Color: {product.color}</div>
+    <div className="details-image">
+      <img style={styles.image} src={product.image} alt="" img-test="details" />
+    </div>
+    <Quantity />
   </div>
 );
-
-// ProductDetails.propTypes = {
-//   products: PropTypes.array
-// };
 
 export default ProductDetails;

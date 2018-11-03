@@ -2,11 +2,11 @@ const faker = require("faker");
 const Product = require("./Product.js");
 const db = require("./index.js");
 
-db.dropCollection("", () => {}); // TODO
+db.dropCollection("products", () => {}); // TODO
 
 const createMockProducts = () => {
   const products = [];
-  for (let i = 1; i <= 101; i += 1) {
+  for (let i = 1; i <= 100; i += 1) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
@@ -14,7 +14,8 @@ const createMockProducts = () => {
       reviewCount: faker.random.number({ min: 20, max: 150 }),
       itemNum: i,
       price: faker.commerce.price(50, 500),
-      color: faker.commerce.color()
+      color: faker.commerce.color(),
+      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${i}.jpg`
     });
   }
   return products;
@@ -23,11 +24,14 @@ const createMockProducts = () => {
 const data = createMockProducts();
 
 function inputSampleProducts() {
-  return Product.create(data);
-  // .then() TODO
+  return Product.create(data)
+    .then(() => db.close())
+    .catch(err => console.log("err", err));
 }
 
 inputSampleProducts();
+
+module.exports.createMockProducts = createMockProducts;
 
 // var createMockReviews = () => {
 //   var reviews = [];

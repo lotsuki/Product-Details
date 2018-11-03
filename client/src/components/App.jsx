@@ -1,23 +1,29 @@
 import React from "react";
 import axios from "axios";
 import ProductDetails from "./ProductDetails.jsx";
+import styles from "../style.css.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      products: []
+      product: null,
+      isLoading:false
     };
   }
 
   componentDidMount() {
+    const url = window.location.href.split("/");
+    const id = url[url.length - 1];
+
     axios
-      .get("http://localhost:3001/api/posts")
+      .get(`http://localhost:3001/data/${id}`)
       .then(res => {
         const data = res.data;
         this.setState({
-          products: data
+          product: data,
+          isLoading: true
         });
       })
       .catch(err => {
@@ -26,10 +32,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { products } = this.state;
-    return <ProductDetails products={products} />;
+    const { product, isLoading } = this.state;
+    var view;
+    if(isLoading) {
+      view = <ProductDetails product={product} style={styles.ProductDetails}/>
+    }
+    return (
+      <div>{view}</div>
+    )
   }
-}
+};
 
 export default App;
 
