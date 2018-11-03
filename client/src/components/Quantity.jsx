@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import styles from "../style.css.js";
 
-class Quantity extends from React.Component {
+class Quantity extends React.Component {
   constructor(props) {
     super(props)
 
@@ -18,19 +19,23 @@ class Quantity extends from React.Component {
   }
 
   decrement() {
-    this.setState({
-      counter: this.state.counter - 1
-    });
+    if(this.state.counter === 1) {
+      alert('Quantity cannot be less than 1')
+    } else {
+      this.setState({
+        counter: this.state.counter - 1
+      });
+    }
   }
 
   render() {
     return (
       <div className="quantity-wrapper">
-        <div className="quantity">Quantity</div>
+        <div style={styles.quantity}>Quantity</div>
         <div className="button-wrapper">
-          <button type="button" onClick={() => { this.decrement }}>-</button>
-          <input type="text" name="quantity" minlength="1" value={this.state.counter}/>
-          <button type="button" onClick={() => { this.increment }}>+</button>
+          <button style={styles.button} type="button" onClick={ this.decrement }>-</button>
+          <input type="text" name="quantity" value={ this.state.counter } readOnly={true} />
+          <button style={styles.button} type="button" onClick={ this.increment }>+</button>
         </div>
       </div>
     )

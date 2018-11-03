@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const db = require("./index.js"); // TODO: fix eslint to ignore import
+const db = require("./index.js"); // TODO: fix eslint to ignore import
 
 mongoose.Promise = global.Promise;
 

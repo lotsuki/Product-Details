@@ -1,13 +1,15 @@
 import React from "react";
 import axios from "axios";
 import ProductDetails from "./ProductDetails.jsx";
+import styles from "../style.css.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      product: []
+      product: null,
+      isLoading:false
     };
   }
 
@@ -20,7 +22,8 @@ class App extends React.Component {
       .then(res => {
         const data = res.data;
         this.setState({
-          product: data
+          product: data,
+          isLoading: true
         });
       })
       .catch(err => {
@@ -29,10 +32,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { product } = this.state;
-    return <ProductDetails product={product} />;
+    const { product, isLoading } = this.state;
+    var view;
+    if(isLoading) {
+      view = <ProductDetails product={product} style={styles.ProductDetails}/>
+    }
+    return (
+      <div>{view}</div>
+    )
   }
-}
+};
 
 export default App;
 

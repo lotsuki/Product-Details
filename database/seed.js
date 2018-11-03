@@ -1,5 +1,4 @@
-import faker from "faker";
-
+const faker = require("faker");
 const Product = require("./Product.js");
 const db = require("./index.js");
 
