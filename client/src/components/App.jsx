@@ -9,7 +9,7 @@ class App extends React.Component {
 
     this.state = {
       product: null,
-      isLoading:false
+      isLoading: false
     };
   }
 
@@ -33,16 +33,12 @@ class App extends React.Component {
 
   render() {
     const { product, isLoading } = this.state;
-    var view;
-    if(isLoading) {
-      view = <ProductDetails product={product} style={styles.ProductDetails}/>
+    let view;
+    if (isLoading) {
+      view = <ProductDetails product={product} style={styles.ProductDetails} />;
     }
-    return (
-      <div>{view}</div>
-    )
+    return <div>{view}</div>;
   }
-};
+}
 
 export default App;
-
-// TODO: fix eslint to include underscore vars

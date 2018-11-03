@@ -1,20 +1,19 @@
-import React from 'react';
-import StarRatings from 'react-star-ratings';
-
+import React from "react";
+import StarRatings from "react-star-ratings";
 
 class Star extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       rating: this.props.product.rating
-    }
+    };
   }
 
   changeRating(newRating, name) {
     this.setState({
       rating: newRating
-    })
+    });
   }
 
   render() {
@@ -27,10 +26,9 @@ class Star extends React.Component {
         starDimension="15px"
         starSpacing="0"
         name="rating"
-        />
+      />
     );
   }
-
 }
 
 export default Star;
