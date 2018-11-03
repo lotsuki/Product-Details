@@ -14,6 +14,21 @@
     "test": "jest --watch --verbose",
     "stage": "lint-staged --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md,scss,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FrontEndCapstone/Product-Details.git"
