@@ -34,7 +34,7 @@ class Quantity extends React.Component {
         <div style={styles.quantity}>Quantity</div>
         <div className="button-wrapper">
           <button style={styles.button} type="button" onClick={ this.decrement }>-</button>
-          <input type="text" name="quantity" value={ this.state.counter } readOnly={true} />
+          <input style={styles.input} type="text" name="quantity" value={ this.state.counter } readOnly={true} />
           <button style={styles.button} type="button" onClick={ this.increment }>+</button>
         </div>
       </div>
