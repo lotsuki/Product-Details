@@ -1,8 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 const faker = require("faker");
 const Product = require("./Product.js");
 const db = require("./index.js");
 
-db.dropCollection("products", () => {}); // TODO
+db.dropCollection("products", () => {});
 
 const createMockProducts = () => {
   const products = [];
