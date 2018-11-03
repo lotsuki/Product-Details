@@ -6,8 +6,8 @@ import styles from "../style.css.js"
 const ProductDetails = ({ product }) => {
   return (
     <div className="product" style={styles.ProductDetails}>
-      <div style={styles.brand}>Trailblazer</div>
-      <div style={styles.name}>{product.name}</div>
+      <div style={styles.brand}>TRAILBLAZER</div>
+      <div style={styles.name}>Trailblazer {product.name}</div>
       <ProductInfo product={ product } />
       <div style={styles.price}>{`$${product.price}.00`}</div>
       <div style={styles.color}>Color: {product.color}</div>

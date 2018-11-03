@@ -9,8 +9,7 @@ const styles = {
   ProductDetails: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    flexGrow: '1',
-    width: '33.3333%',
+    width: '333px',
     padding: '15px',
     fontSize: '1.6rem',
     lineHeight: '1.5',
@@ -21,12 +20,13 @@ const styles = {
   ProductInfo: {
     display: 'flex',
     flexFlow: 'row nowrap',
-    fontSize: '17px'
+    width: '100%',
+    fontSize: '15px'
   },
 
   brand: {
     fontWeight: '700',
-    fontSize: '20px',
+    fontSize: '17px',
     color: '#347CB1',
 
   },
@@ -40,20 +40,26 @@ const styles = {
   },
 
   rating: {
+    paddingLeft: '5px'
   },
 
   reviewCount: {
     paddingLeft: '20px'
   },
 
+  itemWrapper: {
+    display: 'flex',
+    width: '50%',
+    justifyContent: 'flex-end'
+  },
+
   itemNum: {
-    paddingLeft: '20px'
   },
 
   price: {
     fontFamily: 'Sentinel-Black, Sentinel',
-    fontSize: '20px',
-    fontWeight: 'medium',
+    fontSize: '18px',
+    fontWeight: 'bold',
     paddingBottom: '10px'
   },
 
