@@ -14,7 +14,8 @@ const createMockProducts = () => {
       reviewCount: faker.random.number({ min: 20, max: 150 }),
       itemNum: i,
       price: faker.commerce.price(50, 500),
-      color: faker.commerce.color()
+      color: faker.commerce.color(),
+      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${i}.jpg`
     });
   }
   return products;

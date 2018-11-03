@@ -1,3 +1,4 @@
+
 module.exports = {
   "extends": ["airbnb", "prettier", "prettier/react"],
   "plugins": ["react", "prettier"],
@@ -7,6 +8,7 @@ module.exports = {
     "es6": true,
     "node": true,
     "mongo": true,
+    "jest": true,
     "commonjs": true,
     "prototypejs": true
   },
