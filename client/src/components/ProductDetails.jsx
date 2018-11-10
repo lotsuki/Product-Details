@@ -1,19 +1,15 @@
 import React from "react";
-import ProductInfo from "./ProductInfo.jsx";
-import Quantity from "./Quantity.jsx";
+import Details from "./Details.jsx";
 import styles from "../style.css.js";
 
 const ProductDetails = ({ product }) => (
-  <div className="product" style={styles.ProductDetails}>
-    <div style={styles.brand}>Trailblazer</div>
-    <div style={styles.name}>Trailblazer {product.name}</div>
-    <ProductInfo product={product} />
-    <div style={styles.price}>{`$${product.price}.00`}</div>
-    <div style={styles.color}>Color: {product.color}</div>
-    <div className="details-image">
-      <img style={styles.image} src={product.image} alt="" img-test="details" />
+  <div style={styles.container}>
+    <div style={styles.wrapper}>
+      <div style={styles.mainImageWrapper}>
+        <img style={styles.mainImage} src={product.image} alt="" />
+      </div>
+      <Details product={product} />
     </div>
-    <Quantity />
   </div>
 );
 

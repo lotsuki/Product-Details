@@ -18,7 +18,10 @@ class App extends React.Component {
     const id = url[url.length - 1];
 
     axios
-      .get(`http://localhost:3001/data/${id}`)
+      .get(
+        `http://fectrailblazer-env.ckr33svztx.us-east-1.elasticbeanstalk.com
+        /data/${id}`
+      )
       .then(res => {
         const data = res.data;
         this.setState({
@@ -35,7 +38,7 @@ class App extends React.Component {
     const { product, isLoading } = this.state;
     let view;
     if (isLoading) {
-      view = <ProductDetails product={product} style={styles.ProductDetails} />;
+      view = <ProductDetails product={product} style={styles.wrapper} />;
     }
     return <div>{view}</div>;
   }
