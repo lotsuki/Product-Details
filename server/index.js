@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(`${__dirname}/../client/dist`));
+app.use(express.static(`${__dirname}/../client/dist`, { maxAge: "365d" }));
 
 app.get("/product/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
