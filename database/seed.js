@@ -6,9 +6,47 @@ const db = require("./index.js");
 
 db.dropCollection("products", () => {});
 
+const capitalizeFirst = str => {
+  let capitalized = str[0].toUpperCase();
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === " ") {
+      capitalized += str[i].toUpperCase();
+    } else {
+      capitalized += str[i];
+    }
+  }
+  return capitalized;
+};
+
+const randomNum = () => Math.floor(Math.random() * Math.floor(100));
+
+const populateImages = index => {
+  const images = [
+    {
+      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${index}-min.jpg`,
+      color: capitalizeFirst(faker.commerce.color())
+    }
+  ];
+  let numOfImages;
+
+  for (let i = 4; i > 0; i -= 1) {
+    if (index % i === 0) {
+      numOfImages = i - 1;
+      break;
+    }
+  }
+  for (let i = 1; i <= numOfImages; i++) {
+    images.push({
+      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${randomNum()}-min.jpg`,
+      color: capitalizeFirst(faker.commerce.color())
+    });
+  }
+  return images;
+};
+
 const createMockProducts = () => {
   const products = [];
-  for (let i = 1; i <= 100; i += 1) {
+  for (let i = 1; i <= 100; i++) {
     products.push({
       _id: i,
       name: faker.commerce.productName(),
@@ -16,8 +54,8 @@ const createMockProducts = () => {
       reviewCount: faker.random.number({ min: 20, max: 150 }),
       itemNum: i,
       price: faker.commerce.price(50, 500),
-      color: faker.commerce.color(),
-      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${i}-min.jpg`
+      mainImage: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${i}-min.jpg`,
+      images: populateImages(i)
     });
   }
   return products;
@@ -34,3 +72,21 @@ function inputSampleProducts() {
 inputSampleProducts();
 
 module.exports.createMockProducts = createMockProducts;
+
+// var createMockReviews = () => {
+//   var reviews = [];
+//   var randomNumber = faker.random.number({min: 3, max: 16});
+
+//    for (var i = 1; i < randomNumber; i++) {
+//      reviews.push({
+//        review_id: faker.random.number({ max: 5, min: 1 }),
+//        reviewer: faker.internet.userName(),
+//        title: faker.lorem.sentence(),
+//        body: faker.lorem.paragraph(5),
+//        recomend: faker.random.boolean(),
+//        helpful: faker.random.number(47),
+//        unhelpful: faker.random.number(22)
+//      });
+//    }
+//    return reviews;
+// };

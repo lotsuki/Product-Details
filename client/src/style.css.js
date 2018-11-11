@@ -7,7 +7,7 @@ const styles = {
     flexFlow: "row, nowrap",
     justifyContent: "space-around",
     width: "1150px",
-    height: "600px",
+    height: "680px",
     margin: "auto"
   },
   Details: {
@@ -18,23 +18,18 @@ const styles = {
     lineHeight: "1.5",
     fontFamily: `Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif`,
     color: "#222",
-    margin: "35px"
+    margin: "30px"
   },
   mainImageWrapper: {
-    position: "relative"
-  },
-  imgMagnifierGlass: {
-    position: "absolute",
-    borderColor: "fff",
-    cursor: "none",
-    /* Set the size of the magnifier glass: */
-    width: "150px",
-    height: "190px"
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   mainImage: {
     height: "550px",
     width: "700px",
-    margin: "35px",
+    margin: "30px",
     borderRadius: "8px"
   },
   ProductInfo: {
@@ -43,11 +38,13 @@ const styles = {
     width: "100%",
     fontSize: "15px"
   },
+
   brand: {
     fontWeight: "700",
     fontSize: "15px",
     color: "#347CB1"
   },
+
   name: {
     fontWeight: "600",
     fontSize: "2.9 rem",
@@ -83,7 +80,7 @@ const styles = {
     fontSize: "14px"
   },
 
-  image: {
+  images: {
     height: "60px",
     width: "60px",
     borderRadius: "15%",
@@ -95,17 +92,26 @@ const styles = {
   quantity: {
     fontSize: "14px"
   },
-
+  radio: {
+    cursor: "pointer"
+  },
+  label: {
+    fontSize: "1rem",
+    fontWeight: "bold",
+    display: "inlineBlock",
+    marginTop: "10px"
+  },
   button: {
-    borderRadius: "50%"
+    borderRadius: "50%",
+    cursor: "pointer"
   },
 
   input: {
-    width: "35px",
-    height: "30px",
+    width: "43px",
+    height: "36px",
     margin: "5px",
     textAlign: "center",
-    fontSize: "15px"
+    fontSize: "17px"
   },
   cart: {
     borderRadius: "0",
@@ -117,7 +123,7 @@ const styles = {
     width: "100%",
     height: "45px",
     fontSize: "17px",
-    marginTop: "15px"
+    marginTop: "35px"
   },
   wishList: {
     borderRadius: "0",

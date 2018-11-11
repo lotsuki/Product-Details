@@ -13,7 +13,7 @@ module.exports = {
     "prototypejs": true
   },
   "rules": {
-    "max-len": ["error", 80],
+    "max-len": ["warn", 80],
     "prettier/prettier": "error",
     "no-console": "off",
     "prefer-destructuring": "off",
@@ -21,6 +21,11 @@ module.exports = {
     "no-undef": "off",
     "no-underscore-dangle": "off",
     "no-unused-vars": "off",
+    "block-scoped-var": "off",
+    "no-plusplus": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
     "react/destructuring-assignment": "off",
     "react/prop-types": 0,
     "react/jsx-filename-extension": [

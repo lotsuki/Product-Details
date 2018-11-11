@@ -6,7 +6,7 @@ const ProductDetails = ({ product }) => (
   <div style={styles.container}>
     <div style={styles.wrapper}>
       <div style={styles.mainImageWrapper}>
-        <img style={styles.mainImage} src={product.image} alt="" />
+        <img style={styles.mainImage} src={product.mainImage} alt="" />
       </div>
       <Details product={product} />
     </div>

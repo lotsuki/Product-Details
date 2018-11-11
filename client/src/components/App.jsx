@@ -19,8 +19,7 @@ class App extends React.Component {
 
     axios
       .get(
-        `http://fectrailblazer-env.ckr33svztx.us-east-1.elasticbeanstalk.com
-        /data/${id}`
+        `http://fectrailblazer-env.ckr33svztx.us-east-1.elasticbeanstalk.com/data/${id}`
       )
       .then(res => {
         const data = res.data;
@@ -38,7 +37,7 @@ class App extends React.Component {
     const { product, isLoading } = this.state;
     let view;
     if (isLoading) {
-      view = <ProductDetails product={product} style={styles.wrapper} />;
+      view = <ProductDetails product={product} style={styles.ProductDetails} />;
     }
     return <div>{view}</div>;
   }

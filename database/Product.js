@@ -10,8 +10,8 @@ const productSchema = mongoose.Schema({
   reviewCount: Number,
   itemNum: Number,
   price: Number,
-  color: String,
-  image: String
+  mainImage: String,
+  images: Array
 });
 
 const Products = mongoose.model("Products", productSchema);
