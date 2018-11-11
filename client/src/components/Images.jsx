@@ -12,6 +12,9 @@ const Images = props => (
           onMouseOver={e => {
             props.handleChange(e.target);
           }}
+          onClick={e => {
+            props.handleClick(e.target);
+          }}
           img-test="details"
         />
       </span>

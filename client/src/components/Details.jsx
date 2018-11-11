@@ -11,9 +11,11 @@ class Details extends React.Component {
     super(props);
 
     this.state = {
-      color: this.props.product.images[0].color
+      color: this.props.product.images[0].color,
+      mainImage: this.props.product.mainImage
     };
     this.changeColor = this.changeColor.bind(this);
+    this.changeImage = this.changeImage.bind(this);
   }
 
   changeColor(img) {
@@ -27,25 +29,42 @@ class Details extends React.Component {
     }
   }
 
+  changeImage(img) {
+    const image = img.src;
+    this.setState({
+      mainImage: image
+    });
+  }
+
   render() {
     const { product } = this.props;
     return (
-      <div className="product" style={styles.Details}>
-        <div style={styles.brand}>Trailblazer</div>
-        <div style={styles.name}>Trailblazer {product.name}</div>
-        <ProductInfo product={product} />
-        <div style={styles.price}>{`$${product.price}.00`}</div>
-        <div style={styles.color}>Color: {this.state.color}</div>
-        <Images
-          product={product}
-          handleChange={img => {
-            this.changeColor(img);
-          }}
-        />
-        <Quantity />
-        <Labels />
-        <Buttons />
-        <div style={styles.returnPolicy}>Trailblazer return policy</div>
+      <div style={styles.container}>
+        <div style={styles.wrapper}>
+          <div style={styles.mainImageWrapper}>
+            <img style={styles.mainImage} src={this.state.mainImage} alt="" />
+          </div>
+          <div style={styles.Details}>
+            <div style={styles.brand}>Trailblazer</div>
+            <div style={styles.name}>Trailblazer {product.name}</div>
+            <ProductInfo product={product} />
+            <div style={styles.price}>{`$${product.price}.00`}</div>
+            <div style={styles.color}>Color: {this.state.color}</div>
+            <Images
+              product={product}
+              handleChange={img => {
+                this.changeColor(img);
+              }}
+              handleClick={img => {
+                this.changeImage(img);
+              }}
+            />
+            <Quantity />
+            <Labels />
+            <Buttons />
+            <div style={styles.returnPolicy}>Trailblazer return policy</div>
+          </div>
+        </div>
       </div>
     );
   }

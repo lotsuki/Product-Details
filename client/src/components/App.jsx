@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import ProductDetails from "./ProductDetails.jsx";
+import Details from "./Details.jsx";
 import styles from "../style.css.js";
 
 class App extends React.Component {
@@ -37,7 +37,7 @@ class App extends React.Component {
     const { product, isLoading } = this.state;
     let view;
     if (isLoading) {
-      view = <ProductDetails product={product} style={styles.ProductDetails} />;
+      view = <Details product={product} />;
     }
     return <div>{view}</div>;
   }
